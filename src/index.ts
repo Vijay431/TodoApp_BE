@@ -10,13 +10,20 @@ DB.Mongoose;
 //Default middelwares
 import cors from 'cors';
 app.use(cors());
+
 import bodyParser from 'body-parser';
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
 //Custom middlewares
 import Auth from './Routes/auth.route';
-app.use('/auth', Auth)
+app.use('/auth', Auth);
+
+import TaskHeader from './Routes/taskheader.route';
+app.use('/taskheader', TaskHeader);
+
+import TaskList from './Routes/tasklist.route';
+app.use('/tasklist', TaskList);
 
 //404 Not Found
 app.use((req, res, next) => {

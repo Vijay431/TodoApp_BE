@@ -39,8 +39,8 @@ Router.use('/login', (req, res, next) => {
 
 //Register Route
 Router.use('/register', (req, res, next) => {
-  let username = req.query.username;
-  let password = req.query.password;
+  let username = req.body.username;
+  let password = req.body.password;
 
   if(!username){
     const error = new Error('Invalid Username');
@@ -53,18 +53,18 @@ Router.use('/register', (req, res, next) => {
     return next(error);
   }
 
-  const auth = new Auth();
-  auth.username = username;
-  auth.password = password;
+  const newUser = new Auth;
+  newUser.username = username;
+  newUser.password = password;
 
-  auth.save((err, user) => {
+  newUser.save((err, user) => {
     if(err){
       const error = new Error('Uh-Oh! Something went Wrong!');
       error.httpStatusCode = 500;
       return next(error);
     }
     else{
-      if(user.length != 0){
+      if(Object.keys(user).length != 0){
         res.json({message: 'success'});
       }
       else{
@@ -73,6 +73,5 @@ Router.use('/register', (req, res, next) => {
     }
   })
 })
-
 
 module.exports = Router;
