@@ -38,6 +38,10 @@ app.use(body_parser_1.default.urlencoded({ extended: true }));
 //Custom middlewares
 const auth_route_1 = __importDefault(require("./Routes/auth.route"));
 app.use('/auth', auth_route_1.default);
+const taskheader_route_1 = __importDefault(require("./Routes/taskheader.route"));
+app.use('/taskheader', taskheader_route_1.default);
+const tasklist_route_1 = __importDefault(require("./Routes/tasklist.route"));
+app.use('/tasklist', tasklist_route_1.default);
 //404 Not Found
 app.use((req, res, next) => {
     const error = new Error('Not Found');
