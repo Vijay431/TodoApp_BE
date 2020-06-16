@@ -11,6 +11,9 @@ const TaskListSchema = mongoose.Schema({
   task: {
     type: String
   },
+  headerID: {
+    type: String
+  },
   completed: {
     type: String
   }
