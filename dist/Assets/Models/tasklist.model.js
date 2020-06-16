@@ -7,7 +7,7 @@ const mongoose_1 = __importDefault(require("mongoose"));
 const TaskListSchema = mongoose_1.default.Schema({
     token: {
         type: String,
-        require: 'required'
+        required: 'required'
     },
     taskID: {
         type: String

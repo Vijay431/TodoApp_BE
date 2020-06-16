@@ -7,11 +7,11 @@ const mongoose_1 = __importDefault(require("mongoose"));
 const AuthSchema = mongoose_1.default.Schema({
     username: {
         type: String,
-        require: 'required'
+        required: 'required'
     },
     password: {
         type: String,
-        require: 'required'
+        required: 'required'
     }
 });
 module.exports = mongoose_1.default.model('users', AuthSchema);

@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 const TaskListSchema = mongoose.Schema({
   token: {
     type: String,
-    require: 'required'
+    required: 'required'
   },
   taskID: {
     type: String

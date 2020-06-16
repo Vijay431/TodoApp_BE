@@ -3,11 +3,11 @@ import mongoose from 'mongoose';
 const AuthSchema = mongoose.Schema({
   username: {
     type: String,
-    require: 'required'
+    required: 'required'
   },
   password: {
     type: String,
-    require: 'required'
+    required: 'required'
   }
 })
 
