@@ -1,6 +1,6 @@
 import express from 'express';
 import * as dotenv from 'dotenv';
-dotenv.config();
+import 'dotenv/config';
 const app = express();
 
 //DB connection
@@ -35,7 +35,7 @@ app.use((req, res, next) => {
 //Error handler
 app.use((error, req, res, next) => {
   res.status(error.httpStatusCode).send({
-      status: error.httpStatusCode || 500,
+      status: error.httpStatusCode,
       message: error.message
   });
 })
